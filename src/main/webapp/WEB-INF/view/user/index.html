@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Pages</title>
+</head>
+<body>
+
+<h1>All Users Info</h1>
+<br/>
+
+<table>
+
+    <th:block th:each="person : ${people}">
+        <tr>
+            <h3>
+                <a th:href="@{/user/{id}(id=${person.getId()})}" th:text="${person.getName()}">user</a>
+                <a th:href="@{/user/{id}(id=${person.getId()})}" th:text="${person.getSurname()}">user</a>
+                <br/>
+            </h3>
+        </tr>
+    </th:block>
+
+</table>
+
+<br>
+
+<input type="button" value="Add User"
+       onclick="window.location.href = 'user/new'">
+
+</body>
+
+</html>
