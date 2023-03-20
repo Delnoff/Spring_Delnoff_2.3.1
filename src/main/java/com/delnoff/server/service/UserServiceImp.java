@@ -1,6 +1,6 @@
 package com.delnoff.server.service;
 
-import com.delnoff.server.DAO.UserDao;
+import com.delnoff.server.dao.UserDao;
 import com.delnoff.server.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +21,7 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public List<User> read() {
         return userDao.read();
     }
@@ -39,7 +39,7 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public User showId(long id) {
         return userDao.showId(id);
     }

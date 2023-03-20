@@ -1,4 +1,4 @@
-package com.delnoff.server.DAO;
+package com.delnoff.server.dao;
 
 import com.delnoff.server.model.User;
 import org.springframework.stereotype.Repository;
